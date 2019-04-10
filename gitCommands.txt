@@ -23,7 +23,7 @@ Commiting a new file to remote repository
 example:
 echo test2.test >> test2.txt
 git add test.txt
-git commit -m "Adil Ka bacha"
+git commit -m "Adil Ka bacha bacha"
 git push
 
 To pull changes from remote repository to local
