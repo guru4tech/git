@@ -1,4 +1,4 @@
-configuring local git for the first time
+Adil configuring local git for the first time
 ----------------------------------------
 git config --global user.name "Amir Aziz"
 git config --global user.email "amiraziz@gmail.com"
