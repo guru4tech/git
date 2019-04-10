@@ -1,0 +1,55 @@
+configuring local git for the first time
+----------------------------------------
+git config --global user.name "Amir Aziz"
+git config --global user.email "amiraziz@gmail.com"
+
+cloning from web to local.
+--------------------------
+git clone <repository name>
+exampole:
+git clone https://github.com/guru4tech/kops.git
+
+check status of repostory locally command line
+----------------------------------------------
+git status
+
+Commiting a new file to remote repository
+-----------------------------------------
+1. Create file
+2. add file
+3. Commit file to local repostory
+4. Push file to remote repository
+
+example:
+echo test2.test >> test2.txt
+git add test.txt
+git commit -m "Adil Ka bacha"
+git push
+
+To pull changes from remote repository to local
+-----------------------------------------------
+git pull
+
+Intialise local repositry from scratch
+--------------------------------------
+
+1. create new project folder.
+2. create required file and directoiores for the project.
+3. intialise local repository "git init"
+
+setup local repisotory to talk with remote repo
+-----------------------------------------------
+1. create intial repository on the github. and copy the url.
+2. link local repo to remote repo
+   git remote add <local name to be given> <remote link copied earlier>
+   git remote add origin https://github.com/guru4tech/testing.git
+3. push local changes to remote repository
+   git push -u origin master
+
+To check remote repositories configured
+---------------------------------------
+git remote -v
+
+To delete remote repo link
+--------------------------
+git remote remove origin
