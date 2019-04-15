@@ -53,3 +53,35 @@ git remote -v
 To delete remote repo link
 --------------------------
 git remote remove origin
+
+
+DAY 2
+=====
+Links
+-----
+git-for-windows.github.io
+notepad-plus-plus.org
+perforce.com (https://www.perforce.com/products/helix-core-apps/merge-diff-tool-p4merge)
+https://github.com/scm-ninja/starter-web
+
+git configurtaion for merge tool
+--------------------------------
+git config --global merge.tool p4merge
+git config --global mergetool.p4merge.path <system path to p4merge tool>
+for example git config --global mergetool.p4merge.path "C:/Program Files/Perforce/p4merge.exe" (forward(UNIX) style)
+git config --global mergetool.prompt false
+
+git configurtaion for diff tool
+-------------------------------
+
+git config --global diff.tool p4merge
+git config --global difftool.p4merge.path <system path to p4merge tool>
+for example git config --global difftool.p4merge.path "C:/Program Files/Perforce/p4merge.exe"
+git config --global difftool.prompt false
+
+list configuration
+------------------
+
+git config --global --list
+
+
