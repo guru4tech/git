@@ -84,4 +84,122 @@ list configuration
 
 git config --global --list
 
+How to See difference between the working directory and Git's staging area
+==========================================================================
 
+Type "git diff" without any parameters, Git responds by comparing the differences
+between what is in the local working directory that has been recently modified,
+but not yet staged; versus, what's currently staged.
+
+git diff
+
+we can use Git's "difftool" command to visually see our changes.
+
+git difftool
+
+How to see difference between the working directory and last known commit
+=========================================================================
+
+do "git diff", and then the point reference to "HEAD" as our parameter,
+Git will compare the difference between the working directory,and the 
+last commit on this branch.
+
+git diff HEAD
+
+we can use Git's "difftool" command to visually see our changes.
+
+git difftool HEAD
+
+difference between what's been staged and commit
+================================================
+
+to see the difference between staged and the last commit on the current branch
+
+"git diff --staged HEAD"
+
+we can use Git's "difftool" command to visually see our changes.
+
+"git difftool --staged HEAD". on the right hand side, you can see our staged file
+
+diffs involve multiple files
+============================
+
+limit the "diff" to just the "README.md" file:
+
+"git diff --"; space; and then the path that you want to "diff"
+
+git diff -- README.md
+
+visual tool
+
+
+git difftool -- README.md
+
+Comapring between commits
+=========================
+
+ use the "git log" command: "git log --oneline".
+
+This will give us our history of the commits that've happened so far,
+
+git log --online
+
+pick a commit so we can use git command to do the diff
+git diff <first refernce point> HEAD
+
+now you can see the differences between all the changes that have happened across several files
+from the last commit to the specified commit.
+
+
+An alternative syntax would be "git diff HEAD", and then "HEAD" again
+
+with the up carrot. This compares "HEAD" and then HEAD minus one.
+
+git diff HEAD HEAD^
+
+copare two arbitrary points; so "git diff",
+
+and then commit id one, vs commit id two.
+
+And, again, we can see the differences between one side and the other.
+
+git diff <commit id 1> <commit id 2>
+
+diff between two branches
+=========================
+
+git diff master origin/master
+
+BRANCHES
+========
+
+Branches in GIT
+===============
+
+Listing branches
+
+git branch -a
+
+create a new branch
+===================
+
+git branch <new branch name>
+
+git branch mynewbranch
+
+switch to the new branch
+========================
+
+git checkout mynewbranch
+
+rename branch 
+=============
+
+git branch -m <old name> <new name>
+
+git branch -m mynewbranch newbranch
+
+delete branch
+=============
+
+git branch -d <branch name>
