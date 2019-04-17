@@ -203,3 +203,176 @@ delete branch
 =============
 
 git branch -d <branch name>
+
+
+
+Fast Forward merge
+==================
+==================
+
+
+"git branch -a" lists all branches, including remote branches.
+
+Let's start off by making a branch to make an edit to
+
+our "simple.html" file; we're just going to change the title.
+
+create branch in one step
+=========================
+git checkout -b title-change
+
+git branch -a
+
+edit title in simple.html save and close
+
+git commit -am "made change to title in simple.html"
+
+merge  changes back into master
+===============================
+change back into master branch
+
+git checkout master
+
+do the diff between branches
+
+git diff master title-change
+
+merge
+
+git merge title-change
+
+
+git branch -d title-change
+
+No Fast Forward Merges
+======================
+======================
+
+git checkout -b add-copyright
+
+modify simple.html
+
+git commit -am "Adding copy right noitice"
+edit README.md
+
+### Some Genberic text
+
+git commmit -am "Adding text to README"
+
+merge
+
+git checkout master
+
+git merge add-copyright --no-ff
+
+git log --oneline --graph --decorate --all
+
+Automatic Merges
+================
+================
+
+git checkout -b simple-changes
+
+edit humans.txt file
+
+add underneathe #TEAM
+
+
+git commit -am "Adding team member to humans.txt"
+
+git checkout master
+
+change readmne in master branch
+
+git commit -am "adding instructions on how to contribute"
+
+git log --oneline --graph --decorate --all
+
+m,erge
+
+git merge simple-change -m "Mergeing changes"
+
+
+Conflicting Merges and Resolution
+=================================
+
+git checkout -b realwork
+
+eidt simple.html
+
+copyright area at the bottm
+
+edit title 
+git add 
+git commit -am "Making changes to simple.html"
+
+git checkout master
+
+edit simple.html
+
+edit title
+
+edit copyright section
+
+
+git add simple.html
+git commit -m "adding conflicting changes"
+
+merge
+
+git merge realwork
+
+open simple.html
+git mergetool
+
+
+git commit -m "Done resolving merge conflicts"
+
+create .gitignore
+*.orig
+
+cleanup and push to github
+
+git pull origin/master
+
+git push origin master
+
+REBASING CODE in GIT
+====================
+
+git branch -b myfeature
+
+edit humans.txt
+
+git commit -am "saying thanks"
+
+git checkout master
+
+eidt READEME.md
+
+add more text
+
+git commit -am "adding line for rebase example"
+
+git checkout myfeature
+
+git rebase master
+git log --oneline --graph --decorate --all
+
+edit READEME file again
+
+git commit -am "Adding another change"
+
+git checkout master
+
+git merge myfeature
+
+
+
+
+
+
+
+
+
+
